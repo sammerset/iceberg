@@ -1,0 +1,11 @@
+development: &base
+  poro_url: 'http://localhost:3000'
+  database_url: 'mysql2://root:@localhost/poro_development'
+  database_max_conn: '5'
+test:
+  <<: *base
+  database_url: 'mysql2://root:@localhost/poro_test'
+production:
+  <<: *base
+  database_url: 'mysql2://root:@localhost/poro_production'
+  database_max_conn: '300'
